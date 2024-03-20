@@ -46,6 +46,7 @@ const CommitMap: React.FC = () => {
           ))
         )}
       </div>
+      <Buttons />
     </GridContext.Provider>
   );
 };
