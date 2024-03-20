@@ -88,7 +88,7 @@ const CommitMap: React.FC = () => {
                 event.stopPropagation();
                 handleMouseDown(event, i, j);
               }}
-              onMouseMove={() => handleMouseOver(i, j)}
+              onMouseOver={() => handleMouseOver(i, j)}
             />
           ))
         )}
