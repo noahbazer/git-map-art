@@ -32,6 +32,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #0d1117;
 }
 
 h1 {
@@ -74,7 +75,7 @@ button:focus-visible {
 .grid {
   display: grid;
   grid-template-columns: repeat(50, 1fr);
-  gap: 4px;
+  gap: 7px;
 }
 
 .cell {
@@ -83,31 +84,36 @@ button:focus-visible {
 }
 
 .level-0 {
-  background-color: #eee;
-  border-radius: 3px;
+  background-color: #161b22;
+  border: 1px solid #161b22;
+  border-radius: 5px;
   padding: 10px;
 }
 
 .level-1 {
-  background-color: #d6e685;
-  border-radius: 3px;
+  background-color: #0e4429;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
   padding: 10px;
 }
 
 .level-2 {
-  background-color: #8cc665;
-  border-radius: 3px;
+  background-color: #006d32;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
   padding: 10px;
 }
 
 .level-3 {
-  background-color: #44a340;
-  border-radius: 3px;
+  background-color: #26a641;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
   padding: 10px;
 }
 
 .level-4 {
-  background-color: #1e6823;
-  border-radius: 3px;
+  background-color: #39d353;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
   padding: 10px;
 }
