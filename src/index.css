@@ -75,13 +75,15 @@ button:focus-visible {
 .grid {
   display: grid;
   grid-template-columns: repeat(50, 1fr);
-  gap: 7px;
+  cursor: crosshair;
 }
 
 .cell {
-  width: 10px;
-  height: 10px;
-  cursor: pointer;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  margin: 2px;
+  box-sizing: border-box;
+  cursor: crosshair;
 }
 
 .level-0 {
