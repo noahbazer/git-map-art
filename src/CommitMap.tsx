@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 import './App.css';
+import Buttons from './Buttons'; // Import your Buttons component
+
+export const GridContext = React.createContext({
+  clearAll: () => {},
+  fillAll: () => {},
+});
 
 const CommitMap: React.FC = () => {
   const rows = 7;
@@ -17,18 +23,30 @@ const CommitMap: React.FC = () => {
     });
   };
 
+  const clearAll = () => {
+    console.log('clearAll called');
+    setGrid(Array(rows).fill(Array(cols).fill(0)));
+  };
+
+  const fillAll = () => {
+    console.log('fillAll called');
+    setGrid(Array(rows).fill(Array(cols).fill(4)));
+  };
+
   return (
-    <div className="grid">
-      {grid.map((row, i) =>
-        row.map((cell, j) => (
-          <div
-            key={`${i}-${j}`}
-            className={`cell level-${cell}`}
-            onClick={() => handleClick(i, j)}
-          />
-        ))
-      )}
-    </div>
+    <GridContext.Provider value={{ clearAll, fillAll }}>
+      <div className="grid">
+        {grid.map((row, i) =>
+          row.map((cell, j) => (
+            <div
+              key={`${i}-${j}`}
+              className={`cell level-${cell}`}
+              onClick={() => handleClick(i, j)}
+            />
+          ))
+        )}
+      </div>
+    </GridContext.Provider>
   );
 };
 

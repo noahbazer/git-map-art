@@ -1,10 +1,10 @@
 import './App.css';
-import CommitMap from './CommitMap';
+import { AppContainer } from './AppContainer';
 
 function App() {
   return (
     <>
-      <CommitMap />
+      <AppContainer />
     </>
   );
 }
