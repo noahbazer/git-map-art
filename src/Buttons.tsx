@@ -19,7 +19,7 @@ export const Buttons: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="buttons">
       <button onClick={handleClearAll}>Clear All</button>
       <button onClick={handleFillAll}>Fill All</button>
     </div>

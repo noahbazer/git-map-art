@@ -81,6 +81,7 @@ button:focus-visible {
 .cell {
   width: 10px;
   height: 10px;
+  cursor: pointer;
 }
 
 .level-0 {

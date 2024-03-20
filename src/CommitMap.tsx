@@ -14,6 +14,7 @@ const CommitMap: React.FC = () => {
     .fill(0)
     .map(() => Array(cols).fill(0));
   const [grid, setGrid] = useState(initialGrid);
+  const [mouseIsDown, setMouseIsDown] = useState(false);
 
   const handleClick = (row: number, col: number) => {
     setGrid((prevGrid) => {
@@ -21,6 +22,21 @@ const CommitMap: React.FC = () => {
       newGrid[row][col] = (newGrid[row][col] + 1) % 5;
       return newGrid;
     });
+  };
+
+  const handleMouseDown = (row: number, col: number) => {
+    setMouseIsDown(true);
+    handleClick(row, col);
+  };
+
+  const handleMouseOver = (row: number, col: number) => {
+    if (mouseIsDown) {
+      handleClick(row, col);
+    }
+  };
+
+  const handleMouseUp = () => {
+    setMouseIsDown(false);
   };
 
   const clearAll = () => {
@@ -41,7 +57,9 @@ const CommitMap: React.FC = () => {
             <div
               key={`${i}-${j}`}
               className={`cell level-${cell}`}
-              onClick={() => handleClick(i, j)}
+              onMouseDown={() => handleMouseDown(i, j)}
+              onMouseOver={() => handleMouseOver(i, j)}
+              onMouseUp={handleMouseUp}
             />
           ))
         )}
